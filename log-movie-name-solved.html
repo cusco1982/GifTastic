@@ -14,39 +14,63 @@
   </style>
 </head>
 
-<body>
 
+
+<body>
   <div class="container">
+
+
     <h1>Movie Search</h1>
 
-     <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="buttons-view"></div>
+
+
+    <!-- Rendered Buttons will get Dumped Here  -->
+    <div id="buttons-view"> </div>
+
+
+
+
 
     <form id="movie-form">
-      <label for="movie-input">Add a Movie, Yo!</label>
-      <input type="text" id="movie-input"><br>
+
+      <label for="movie-input">Add A Gif Button!</label>
+      <input type="text" id="movie-input"> <br>
 
       <!-- Button triggers new movie to be added -->
-      <input id="add-movie" type="submit" value="Add a Movie, Yo!">
+      <input id="add-movie" type="submit" value="Submit">
+
     </form>
+
+
+
+
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
+
+
+
       // Initial array of movies
       var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
       // Generic function for capturing the movie name from the data-attribute
       function alertMovieName() {
-        var movieName = $(this).attr("data-name");
-
+        var movieName = $(this).attr("data-name"); //added with ---------> a.attr("data-name", movies[i]);
         alert(movieName);
       }
+
+
+
+
 
       // Function for displaying movie data
       function renderButtons() {
 
-        // Deleting the movies prior to adding new movies
-        // (this is necessary otherwise we will have repeat buttons)
+        // Deleting the movies prior to adding new movies (this is necessary otherwise we will have repeat buttons)
         $("#buttons-view").empty();
 
         // Looping through the array of movies
@@ -66,8 +90,10 @@
         }
       }
 
+
+
       // This function handles events where one button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         // Preventing the buttons default behavior when clicked (which is submitting a form)
         event.preventDefault();
         // This line grabs the input from the textbox
@@ -81,14 +107,23 @@
 
       });
 
+
+
+
+      
       // Function for displaying the movie info
       // We're adding a click event listener to all elements with the class "movie"
       // We're adding the event listener to the document because it will work for dynamically generated elements
       // $(".movies").on("click") will only add listeners to elements that are on the page at that time
       $(document).on("click", ".movie", alertMovieName);
 
+
+
+      
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
+      
+
     </script>
   </div>
 </body>
