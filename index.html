@@ -90,11 +90,13 @@
       
 
 
+    // $(".movie").on("click", function () {
 
 
+$(document).on("click",".movie", getMovie);
 
     // Event listener for all button elements
-    $(".movie").on("click", function () {
+    function getMovie() {
       // In this case, the "this" keyword refers to the button that was clicked
       var person = $(this).attr("data-name");
 
@@ -149,7 +151,7 @@
           }
         });
 
-    });
+    };
 
 $(document).on("click", ".gify", function() {
     if($(this).attr("data-animate") === $(this).attr("src")) {
